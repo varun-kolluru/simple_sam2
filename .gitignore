@@ -1,0 +1,40 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+*.whl
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# simple-sam2 runtime data and video files
+simple_sam2_storage/
+.mp4
+
+# SAM2 checkpoints (large files)
+checkpoints/
+*.pt
+*.pth
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Testing
+.ipynb
+.pytest_cache/
+.coverage
+htmlcov/

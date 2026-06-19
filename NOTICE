@@ -1,0 +1,12 @@
+simple-sam2
+Copyright 2026 Varun Kolluru
+
+This project is a wrapper around SAM2 (Segment Anything Model 2) by Meta AI Research.
+
+SAM2 Repository : https://github.com/facebookresearch/sam2
+SAM2 License    : Apache 2.0
+SAM2 Copyright  : Copyright (c) Meta Platforms, Inc. and affiliates.
+
+In compliance with the Apache 2.0 License, the original SAM2 license and
+copyright notice are reproduced above. This project does not redistribute
+SAM2 source code; it declares SAM2 as a pip dependency.
