@@ -69,6 +69,7 @@ class SAM2Service:
         ckpt: str,
         batch_size: int = 60,
         storage_dir: str = _DEFAULT_STORAGE,
+        device: str = "cpu"
     ):
         """
         Parameters
@@ -88,12 +89,18 @@ class SAM2Service:
             Defaults to ``simple_sam2_storage/`` in the current working
             directory.
         """
-        if torch.cuda.is_available():
+        if device == "cuda":
+            if not torch.cuda.is_available():
+                raise RuntimeError("device='cuda' was requested but CUDA is not available on this machine.")
             self.device = "cuda"
-        elif torch.backends.mps.is_available():
+        elif device == "mps":
+            if not torch.backends.mps.is_available():
+                raise RuntimeError("device='mps' was requested but MPS is not available on this machine.")
             self.device = "mps"
-        else:
+        elif device == "cpu":
             self.device = "cpu"
+        else:
+            raise ValueError(f"Unknown device '{device}'. Choose from: 'cpu', 'cuda', 'mps'.")
 
         self.cfg = cfg
         self.ckpt = ckpt

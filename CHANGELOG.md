@@ -17,3 +17,7 @@ Initial release.
 
 - Changed default `batch_size` from 10 to 60
 - Fixed early termination: propagation now stops immediately at `end_frame_idx` instead of iterating through the rest of the batch
+
+## 1.0.0 (2026-06-20)
+
+- Gave option for user to select device (cuda, mps, cpu)

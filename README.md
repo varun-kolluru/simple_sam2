@@ -1,3 +1,6 @@
+# Published in pypi.org 
+https://pypi.org/project/simple-sam2/
+
 # simple-sam2
 
 A lightweight Python wrapper around [Meta SAM2](https://github.com/facebookresearch/sam2) that makes long-video segmentation practical.
@@ -55,7 +58,7 @@ VIDEO   = "path/to/my_video.mp4"
 
 #Note:- you only have to download weights (.pt) files, config files are already present at configs/ dir of sam2
 
-svc = SAM2Service(cfg=CONFIG, ckpt=WEIGHTS, batch_size=60)
+svc = SAM2Service(cfg=CONFIG, ckpt=WEIGHTS, batch_size=60, device="cuda")
 ```
 
 ### 1. Initialise the video
@@ -128,7 +131,7 @@ svc.clear_video("demo", delete_storage= True)  # delete all video related frames
 
 ## API reference
 
-### `SAM2Service(cfg, ckpt, batch_size=60, storage_dir=...)`
+### `SAM2Service(cfg, ckpt, batch_size=60, storage_dir=..., device=)`
 
 | Parameter | Description |
 |---|---|
@@ -136,6 +139,7 @@ svc.clear_video("demo", delete_storage= True)  # delete all video related frames
 | `ckpt` | Path to SAM2 `.pt` checkpoint file |
 | `batch_size` | Frames in memory at once. Reduce if you run out of GPU memory |
 | `storage_dir` | Root directory for all data. Defaults to `<cwd>/simple_sam2_storage` |
+| `device` | Device to run SAM2 on. Options: `'cpu'`, `'cuda'`, `'mps'`. Defaults to `'cpu'` |
 
 ### `init_video(video_name, video_path)`
 
