@@ -11,3 +11,9 @@ Initial release.
 - Automatic frame extraction from video files via OpenCV
 - Centralized storage layout under `simple_sam2_storage/<video_name>/`
 - Carry-over mask mechanism to maintain object identity across batch boundaries
+
+
+## 0.1.1 (2026-06-20)
+
+- Changed default `batch_size` from 10 to 60
+- Fixed early termination: propagation now stops immediately at `end_frame_idx` instead of iterating through the rest of the batch

@@ -15,10 +15,14 @@ A lightweight Python wrapper around [Meta SAM2](https://github.com/facebookresea
 ## Installation
 
 ```bash
+# 1. Install SAM2 manually first (not on PyPI)
+pip install git+https://github.com/facebookresearch/sam2.git
+
+# 2. Then install simple-sam2
 pip install simple-sam2
 ```
 
-> **Note:** SAM2 itself is installed automatically as a dependency from Meta's GitHub repo. You still need to **download the model weights** separately (see below).
+> **Note:** SAM2 is a dependency which is installed from Meta's GitHub repo. You still need to **download the model weights** separately (see below).
 
 ### Download SAM2 weights
 
@@ -51,7 +55,7 @@ VIDEO   = "path/to/my_video.mp4"
 
 #Note:- you only have to download weights (.pt) files, config files are already present at configs/ dir of sam2
 
-svc = SAM2Service(cfg=CONFIG, ckpt=WEIGHTS, batch_size=10)
+svc = SAM2Service(cfg=CONFIG, ckpt=WEIGHTS, batch_size=60)
 ```
 
 ### 1. Initialise the video
@@ -124,7 +128,7 @@ svc.clear_video("demo", delete_storage= True)  # delete all video related frames
 
 ## API reference
 
-### `SAM2Service(cfg, ckpt, batch_size=10, storage_dir=...)`
+### `SAM2Service(cfg, ckpt, batch_size=60, storage_dir=...)`
 
 | Parameter | Description |
 |---|---|

@@ -67,7 +67,7 @@ class SAM2Service:
         self,
         cfg: str,
         ckpt: str,
-        batch_size: int = 10,
+        batch_size: int = 60,
         storage_dir: str = _DEFAULT_STORAGE,
     ):
         """
@@ -550,7 +550,9 @@ class SAM2Service:
                 ):
                     global_frame_idx = batch_start + out_frame_idx
 
-                    if global_frame_idx < start_frame_idx or global_frame_idx >= end_frame_idx:
+                    if global_frame_idx >= end_frame_idx:
+                        break                              # ← was: continue; now we stop early
+                    if global_frame_idx < start_frame_idx:
                         continue
 
                     processed_so_far += 1

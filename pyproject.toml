@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "simple-sam2"
-version = "0.1.0"
+version = "0.1.1"
 description = "A lightweight wrapper around Meta SAM2 for practical long-video segmentation."
 readme = "README.md"
 license = { file = "LICENSE" }
@@ -31,14 +31,13 @@ dependencies = [
     "torchvision",
     "numpy",
     "Pillow",
-    "opencv-python>=4.8",
-    "sam-2 @ git+https://github.com/facebookresearch/sam2.git",
-]
+    "opencv-python>=4.8"
+    ]
 
 [project.urls]
-Homepage = "https://github.com/varun-kolluru/simple-sam2"
-Repository = "https://github.com/varun-kolluru/simple-sam2"
-"Bug Tracker" = "https://github.com/varun-kolluru/simple-sam2/issues"
+Homepage = "https://github.com/varun-kolluru/simple_sam2"
+Repository = "https://github.com/varun-kolluru/simple_sam2"
+"Bug Tracker" = "https://github.com/varun-kolluru/simple_sam2/issues"
 
 [tool.setuptools.packages.find]
 where = ["."]
